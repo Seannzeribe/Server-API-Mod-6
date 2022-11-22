@@ -1,5 +1,5 @@
 let APIKey = "41ca4e709252b2dfe7bd9fbf87bfdb1a";
-// let APIURL = "http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}"
+// let APIURL = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}"
 
 let cityInput = document.getElementById("cityInput");
 let form = document.getElementById("form");
@@ -17,7 +17,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     let cityValue = cityInput.value;
 
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityValue}&limit=1&appid=${APIKey}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityValue}&limit=1&appid=${APIKey}`)
         .then(res => {
             return res.json()
         })
@@ -31,7 +31,7 @@ function getCoordinates(data) {
     let lat = data[0].lat;
     let lon = data[0].lon;
 
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIKey}`)
         .then(res => {
             return res.json()
         })
@@ -54,7 +54,7 @@ function displayCurrentWeather(data) {
     let currentMonth = currentFormatedDate[1]
     let currentDay = currentFormatedDate[2]
     currentDate.textContent = ` (${currentDay}/${currentMonth}/${currentYear})`;
-    currentImg.src = `http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`
+    currentImg.src = `https://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png`
 }
 
 function displayFiveDayWeather(data) {
@@ -68,7 +68,7 @@ function displayFiveDayWeather(data) {
         fiveDayWrapper.innerHTML += `
         <div class="five-day-card">
         <h3 class="five-day-date">(${currentDay}/${currentMonth}/${currentYear})</h3>
-        <img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" alt="weather">
+        <img src="https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" alt="weather">
         <p>Temp: <span id="five-day-temp">${(((tempinKelvin - 273.15) * 1.8) + 32).toFixed(2)} </span>F</p>
         <p>Wind: <span id="five-day-temp">${data.list[i].wind.speed}</span>MPH</p>
         <p>Humidity: <span id="five-day-temp">${data.list[i].main.humidity} </span>%</p>
@@ -98,7 +98,7 @@ function displayButtons() {
     searchButtons.addEventListener("click", function (e) {
         let cityValue = e.target.textContent
 
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityValue}&limit=1&appid=${APIKey}`)
+        fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityValue}&limit=1&appid=${APIKey}`)
             .then(res => {
                 return res.json()
             })
