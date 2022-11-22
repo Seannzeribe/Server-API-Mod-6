@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgba(43,30,109,255);
+}
+
+header h1 {
+    text-align: center;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.weather-wrapper {
+    display: flex;
+}
+
+.weather-wrapper .weather-left {
+    width: 20%;
+}
+
+
+.weather-wrapper .weather-right {
+    width: 80%;
+    padding: 0 10px;
+}
+
+form input, form button {
+    width: 100%;
+}
+
+form, form h2, form input {
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #6991e3;
+    color: #fff;
+    padding: 5px 0;
+    border: none;
+}
+
+.weather-buttons {
+    padding-top: 10px;
+}
+
+.weather-buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #aeaeae;
+    border: none;
+    padding: 5px 0;
+}
+
+.current-weather {
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.current-weather-header {
+    display: flex;
+    align-items: center;
+}
+
+.current-weather p {
+    margin-bottom: 10px;
+}
+
+.five-day-wrapper {
+    display: flex;
+}
+
+.five-day-wrapper .five-day-card {
+    margin-right: 10px;
+    background-color: #323d4f;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.five-day-wrapper .five-day-card * {
+    margin-bottom: 10px;
+}
